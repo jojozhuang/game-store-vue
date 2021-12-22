@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="jumbotron text-center">
+    <h1>Game Store - Product Management</h1>
+    <p>Built with Vue and Restful API(Spring Boot/Asp.Net Core)</p>
   </div>
 </template>
 
