@@ -107,9 +107,6 @@
 import axios from "axios";
 
 export default {
-  created() {
-    console.log("Component has been created!");
-  },
   data() {
     return {
       id: this.$route.params.id,
@@ -142,7 +139,6 @@ export default {
           .then((response) => {
             this.hasError = false;
             this.image = response.data.message;
-            console.log(this.image);
           })
           .catch((error) => {
             this.hasError = true;
@@ -153,7 +149,6 @@ export default {
       }
     },
     submit() {
-      console.log("submit");
       if (this.productName && this.price && this.image) {
         const data = {
           productName: this.productName,
@@ -188,24 +183,15 @@ export default {
             .finally(() => (this.loading = false));
         }
       }
-      //this.$router.push("/productlist");
-    },
-  },
-  filters: {
-    currencydecimal(value) {
-      return value.toFixed(2);
     },
   },
   mounted() {
-    console.log("Component has been mounted!");
-    console.log(this.id);
     if (this.id) {
       axios
         .get("http://localhost:8080/api/products/" + this.id)
         .then((response) => {
           this.hasError = false;
           let product = response.data;
-          console.log(product);
           this.productName = product.productName;
           this.price = product.price;
           this.image = product.image;

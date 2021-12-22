@@ -90,11 +90,6 @@ export default {
       }
     },
   },
-  filters: {
-    currencydecimal(value) {
-      return value.toFixed(2);
-    },
-  },
   mounted() {
     axios
       .get("http://localhost:8080/api/products")
