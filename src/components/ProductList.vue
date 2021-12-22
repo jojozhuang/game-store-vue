@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import productService from "../services/product.service";
 
 export default {
   data() {
@@ -64,11 +64,11 @@ export default {
     deleteProduct(productId) {
       if (window.confirm("Are you sure to delete this product?")) {
         //console.log(event.id);
-        axios
-          .delete("http://localhost:8080/api/products/" + productId)
+        productService
+          .delete(productId)
           .then((response) => {
-            axios
-              .get("http://localhost:8080/api/products")
+            productService
+              .getAll()
               .then((response) => {
                 this.hasError = false;
                 this.products = response.data;
@@ -91,8 +91,8 @@ export default {
     },
   },
   mounted() {
-    axios
-      .get("http://localhost:8080/api/products")
+    productService
+      .getAll()
       .then((response) => {
         this.hasError = false;
         this.products = response.data;

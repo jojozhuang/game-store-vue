@@ -104,7 +104,7 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import productService from "../services/product.service";
 
 export default {
   data() {
@@ -113,7 +113,7 @@ export default {
       product: null,
       productName: "",
       price: 0,
-      image: "http://localhost:8080/images/default.png",
+      image: process.env.VUE_APP_BASE_URL + "images/default.png",
       filename: "",
       files: [],
       loading: true,
@@ -134,8 +134,8 @@ export default {
         let input = new FormData();
         input.append("file", fileToUpload);
 
-        axios
-          .post("http://localhost:8080/api/upload", input)
+        productService
+          .upload(input)
           .then((response) => {
             this.hasError = false;
             this.image = response.data.message;
@@ -156,8 +156,8 @@ export default {
           image: this.image,
         };
         if (this.id) {
-          axios
-            .put("http://localhost:8080/api/products/" + this.id, data)
+          productService
+            .update(this.id, data)
             .then((response) => {
               this.hasError = false;
               this.$router.push("/productlist");
@@ -169,8 +169,8 @@ export default {
             })
             .finally(() => (this.loading = false));
         } else {
-          axios
-            .post("http://localhost:8080/api/products", data)
+          productService
+            .create(data)
             .then((response) => {
               this.hasError = false;
               this.$router.push("/productlist");
@@ -187,8 +187,8 @@ export default {
   },
   mounted() {
     if (this.id) {
-      axios
-        .get("http://localhost:8080/api/products/" + this.id)
+      productService
+        .getOne(this.id)
         .then((response) => {
           this.hasError = false;
           let product = response.data;
