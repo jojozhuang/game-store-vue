@@ -37,24 +37,10 @@ Setup server to host RESTful API with Spring Boot or ASP.NET Core, see below.
 git clone https://github.com/jojozhuang/game-store-vue.git
 cd game-store-vue
 npm install
-npm run serve
+npm run local
 ```
 
 Access http://localhost:8082/ in web browser, enjoy!
-
-# Deployment
-
-Follow the tutorial [Deploying Game Store Angular App to Netlify](https://jojozhuang.github.io/tutorial/deploying-game-store-angular-app-to-netlify) to deploy this app to Netlify.
-
-Follow the tutorial [Continuously Deploy Angular App to GitHub Pages using Travis-CI](https://jojozhuang.github.io/tutorial/continuously-deploy-angular-app-to-github-pages-using-travis-ci) to deploy this app to GitHub Pages.
-
-# Portfolio
-
-Read portfolio [Game Store(Angular)](https://jojozhuang.github.io/project/game-store-angular) to learn the main functions of this Angular app.
-
-# Tutorial
-
-Read tutorial [Building Web Application with Angular](https://jojozhuang.github.io/tutorial/building-web-application-with-angular) to learn how this Angular app is built.
 
 # References
 
