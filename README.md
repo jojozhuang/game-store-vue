@@ -1,6 +1,6 @@
 # Game Store(Vue)
 
-A web app to manage products, supporting all CRUD operations, built with Vue3.
+A web app to manage products, supporting all CRUD operations, built with Vue 2.
 
 <kbd>![image](/src/assets/game-store-vue.png)</kbd>
 
