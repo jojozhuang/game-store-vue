@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "local": "vue-cli-service serve",
+    "local": "vue-cli-service serve --port 12085",
     "prod": "vue-cli-service serve --mode=production",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",

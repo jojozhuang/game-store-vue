@@ -2,11 +2,9 @@
   <div id="products" class="container">
     <h2>Products</h2>
     <p>Data from Restful API</p>
-    <div v-if="hasError || errmsg">
-      <b-alert v-if="hasError" variant="danger">{{ errmsg }}</b-alert>
-      <b-alert v-if="!hasError" variant="success"
-        >Product has been deleted successfully.</b-alert
-      >
+    <div v-if="message">
+      <b-alert v-if="hasError" variant="danger" show>{{ message }}</b-alert>
+      <b-alert v-if="!hasError" variant="success" show>{{ message }}</b-alert>
     </div>
     <div v-if="loading">Loading...</div>
     <table v-if="!loading" class="table">
@@ -54,10 +52,10 @@ import productService from "../services/product.service";
 export default {
   data() {
     return {
-      products: null,
+      products: [],
       loading: true,
       hasError: false,
-      errmsg: "",
+      message: "",
     };
   },
   methods: {
@@ -67,42 +65,35 @@ export default {
         productService
           .delete(productId)
           .then((response) => {
-            productService
-              .getAll()
-              .then((response) => {
-                this.hasError = false;
-                this.products = response.data;
-                console.log(this.products);
-              })
-              .catch((error) => {
-                this.hasError = true;
-                this.errmsg = error;
-                console.log(error);
-              })
-              .finally(() => (this.loading = false));
+            this.message = "Product has been deleted successfully.";
+            this.getProducts();
           })
           .catch((error) => {
             this.hasError = true;
-            this.errmsg = error;
+            this.message = error;
             console.log(error);
           })
           .finally(() => (this.loading = false));
       }
     },
+    getProducts() {
+      productService
+        .getAll()
+        .then((response) => {
+          this.hasError = false;
+          this.products = response.data;
+        })
+        .catch((error) => {
+          this.hasError = true;
+          this.message = error;
+          console.log(error);
+        })
+        .finally(() => (this.loading = false));
+    },
   },
   mounted() {
-    productService
-      .getAll()
-      .then((response) => {
-        this.hasError = false;
-        this.products = response.data;
-      })
-      .catch((error) => {
-        this.hasError = true;
-        this.errmsg = error;
-        console.log(error);
-      })
-      .finally(() => (this.loading = false));
+    this.message = "";
+    this.getProducts();
   },
 };
 </script>
