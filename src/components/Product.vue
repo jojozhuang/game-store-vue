@@ -160,7 +160,7 @@ export default {
             .update(this.id, data)
             .then((response) => {
               this.hasError = false;
-              this.$router.push("/productlist");
+              this.$router.push("/products");
             })
             .catch((error) => {
               this.hasError = true;
@@ -173,7 +173,7 @@ export default {
             .create(data)
             .then((response) => {
               this.hasError = false;
-              this.$router.push("/productlist");
+              this.$router.push("/products");
             })
             .catch((error) => {
               this.hasError = true;

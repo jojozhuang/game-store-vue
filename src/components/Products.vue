@@ -33,7 +33,7 @@
           <td>
             <b-button
               variant="success"
-              @click="$router.push('/productadd/' + product.id)"
+              @click="$router.push('/product/' + product.id)"
             >
               Edit
             </b-button>

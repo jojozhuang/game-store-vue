@@ -1,11 +1,11 @@
 import { expect } from "chai";
 import { shallowMount } from "@vue/test-utils";
-import ProductList from "@/components/ProductList.vue";
+import Products from "@/components/Products.vue";
 
-describe("ProductList.vue", () => {
+describe("Products.vue", () => {
   it("renders props.msg when passed", () => {
     const msg = "Data from Restful API";
-    const wrapper = shallowMount(ProductList, {
+    const wrapper = shallowMount(Products, {
       propsData: { msg },
     });
     expect(wrapper.text()).to.include(msg);
