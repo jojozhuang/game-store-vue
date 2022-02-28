@@ -28,6 +28,7 @@ _Note: The demo websites may be slow when you access them for the first time. Be
 
 Setup server to host RESTful API with Spring Boot or ASP.NET Core, see below.
 
+- https://github.com/jojozhuang/game-store-springboot
 - https://github.com/jojozhuang/restful-api-springboot
 - https://github.com/jojozhuang/restful-api-aspnet
 
@@ -40,7 +41,7 @@ npm install
 npm run local
 ```
 
-Access http://localhost:8082/ in web browser, enjoy!
+Access http://localhost:12085/ in web browser, enjoy!
 
 # References
 
