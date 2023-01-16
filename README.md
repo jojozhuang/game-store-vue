@@ -17,8 +17,8 @@ This application is used to manage products. It implements all CRUD operations. 
 
 Two available demos:
 
-- `Live Demo on Heroku:` <a href="https://game-store-vue.herokuapp.com/" target="\_blank">https://game-store-vue.herokuapp.com/</a>
 - `Live Demo on Netlify:` <a href="https://game-store-vue.netlify.com/" target="\_blank">https://game-store-vue.netlify.com/</a>
+- `Live Demo on Render:` <a href="https://game-store-vue.onrender.com/" target="\_blank">https://game-store-vue.onrender.com/</a>
 
 _Note: The demo websites may be slow when you access them for the first time. Be patient!_
 
