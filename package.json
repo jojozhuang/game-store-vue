@@ -5,10 +5,15 @@
   "scripts": {
     "local": "vue-cli-service serve --port 12085",
     "prod": "vue-cli-service serve --mode=production",
+    "render": "vue-cli-service serve --mode=render",
+    "netlify": "vue-cli-service serve --mode=netlify",
     "build": "vue-cli-service build",
+    "build-render": "vue-cli-service build --mode=render",
+    "build-netlify": "vue-cli-service build --mode=netlify",
     "test": "vue-cli-service test:unit",
     "e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "server": "node server.mjs"
   },
   "dependencies": {
     "axios": "^0.24.0",
