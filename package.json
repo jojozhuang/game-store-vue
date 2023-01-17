@@ -38,7 +38,7 @@
     "@vue/cli-plugin-unit-mocha": "4.5.19",
     "@vue/cli-service": "4.5.19",
     "@vue/eslint-config-prettier": "7.0.0",
-    "@vue/eslint-config-typescript": "9.1.0",
+    "@vue/eslint-config-typescript": "11.0.2",
     "@vue/test-utils": "1.0.3",
     "chai": "4.3.7",
     "eslint": "7.28.0",
