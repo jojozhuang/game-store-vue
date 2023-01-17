@@ -130,8 +130,8 @@ export default {
     upload() {
       console.log("upload");
       if (this.files && this.files[0]) {
-        let fileToUpload = this.files[0];
-        let input = new FormData();
+        const fileToUpload = this.files[0];
+        const input = new FormData();
         input.append("file", fileToUpload);
 
         productService
@@ -191,7 +191,7 @@ export default {
         .getOne(this.id)
         .then((response) => {
           this.hasError = false;
-          let product = response.data;
+          const product = response.data;
           this.productName = product.productName;
           this.price = product.price;
           this.image = product.image;
