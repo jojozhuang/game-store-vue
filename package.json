@@ -65,7 +65,7 @@
     },
     "rules": {
       "vue/multi-word-component-names": [
-        "error",
+        "off",
         {
           "ignores": [
             "default"
